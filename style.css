@@ -422,7 +422,7 @@ Use body.dark-mode selector_class/id {} for adding dark mode theme
   gap: 15px;
   padding: 15px;
   box-sizing: border-box;
-  background-color: F4F7F7;
+  /*background-color: #F4F7F7;*/
 }
 
 .box {
@@ -717,3 +717,4 @@ html, body, * {
     max-height: 300px;
   }
 }
+
