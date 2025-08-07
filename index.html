@@ -1,0 +1,221 @@
+
+
+<!--
+This file is part of [SplitTexter] https://github.com/AmanLakhuja/SplitTexter 
+
+Copyright (C) [Aman Lakhuja] [2025]
+
+This program is licensed under the Server Side Public License, version 1,
+as published by MongoDB, Inc.
+
+You may obtain a copy of the SSPL at
+https://www.mongodb.com/licensing/server-side-public-license
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SplitTexter</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+
+  <!--  =========================================  -->  
+  <!--  -----------------------------------------  -->
+  <!--  ====== Div 'toolbar' class start here =====  -->  
+  <!--  =========================================  -->  
+  <div class="toolbar">
+
+
+
+    <!--  ===============================================  -->
+    <!--  =====  project_name_container class start =====  -->  
+    <div class="project_name_container">
+      <div class="projectName">
+        <strong>SplitTexter</strong>
+      </div>
+      
+      <div class="CreatedBy">
+        <a href="https://github.com/AmanLakhuja?tab=repositories" id="my_name">By Aman_Lakhuja<span class="tooltip-text">Click To open Github Repository</span></a>
+        
+      </div>
+    </div>
+    <!--  =====  project_name_container class end =====  --> 
+    <!--  =============================================  -->
+
+
+
+    <!--  ============================================  -->
+    <!--  =====  Separater_container class start =====  -->    
+    <div class="Separater_container">
+      <div class="form-row">
+        <label for="separationPoint">Separation Point:</label>
+        <input type="text" id="separationPoint" placeholder="text">
+      </div>
+      <div class="form-row">
+        <label for="separatedBy">Separated By:</label>
+        <input type="text" id="separatedBy" placeholder="text">
+      </div>
+    </div>
+    <!--  =====  Separater_container class end =====  --> 
+    <!--  ==========================================  -->
+
+
+    <!--  =================================================  -->
+    <!--  =====  First Checkbox_container class start =====  -->       
+    <div class="Checkbox_container">
+      <div class="checkbox-row">
+        <label>
+          <input type="checkbox" id="removeSeparator" checked>
+          Remove Separator
+        </label>
+      </div>
+
+      <dv class="checkbox-row">
+        <label>
+          <input type="checkbox" id="addNewLine">
+          Add New Line
+        </label>
+      </dv>
+    </div>
+    <!--  ===== First Checkbox_container class end =====  --> 
+    <!--  ==============================================  -->    
+
+
+    <!--  ==================================================  -->
+    <!--  =====  Second Checkbox_container class start =====  -->  
+    <div class="Checkbox_container" >
+      <div class="checkbox-row" style="width: 180px;">
+        <label>
+            <input type="checkbox" id="noTrailingSeparator" checked>
+            Exclude End Separater
+        </label>
+      </div>
+
+      <div class="checkbox-row" style="width: 180px;">
+        <label>
+            <input type="checkbox" id="noTrailing_prefix_suffix" checked>
+            Exclude End Prefix, Sufix
+        </label>
+      </div>
+    </div>
+    <!--  ===== Second Checkbox_container class end =====  --> 
+    <!--  ===============================================  -->   
+
+
+    <!--  ===============================================  -->
+    <!--  =====  prefix_sufix_container class start =====  -->  
+    <div class="prefix_sufix_container">
+      <div class="form-row">
+        <label>Prefix:
+          <input type="text" id="prefix" placeholder="add prefix">
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Suffix:
+          <input type="text" id="suffix" placeholder="add suffix">
+        </label> 
+      </div>
+    </div>
+    <!--  ===== prefix_sufix_container class end =====  --> 
+    <!--  ============================================  -->
+
+
+    <!--  =============================================  -->
+    <!--  =====  ClearButtonContainer class start =====  -->  
+    <div class="ClearButtonContainer">
+      <div class="clr-button-row">
+        <button id="clearInputsBtn">Clear Input Fields</button>
+      </div>
+
+      <div class="clr-button-row">
+        <button id="clearAllBtn">Clear All</button>
+      </div>
+    </div>
+    <!--  ===== ClearButtonContainer class end =====  --> 
+    <!--  ==========================================  -->
+
+
+    <!--  =====================================================  -->
+    <!--  =====  toogle_button_main_container class start =====  -->  
+    <div class="toogle_button_main_container">
+      <div class="toggle-container">
+        <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-input" />
+        <label for="theme-toggle-checkbox" class="theme-toggle-label">
+          <div class="toggle-slider">
+            <!-- Sun icon (light mode, default) -->
+            <svg class="icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="golden" viewBox="0 0 17 17">
+              <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+            </svg>
+
+            <!-- Moon icon (dark mode, toggled) -->
+            <svg class="icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="-4 -4 24 24">
+              <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+            </svg>
+          </div>
+        </label>
+      </div>
+    </div>
+    <!--  ===== toogle_button_main_container class end =====  --> 
+    <!--  ==================================================  -->
+
+  </div>
+
+  <!--  =========================================  -->
+  <!--  ====== Div toolbar class Ends here ======  -->  
+  <!--  -----------------------------------------  -->  
+  <!--  =========================================  -->
+
+
+  <!--  =============================================  -->  
+  <!--  ---------------------------------------------  -->
+  <!--  ====== Div 'container' start here =====  -->  
+  <!--  =============================================  -->  
+
+  <div class="container">
+    <div class="box">
+      <div class="box-header">
+        <h3>Input</h3>
+        <div>
+          <button id="pasteBtn">Paste</button>
+          <button id="clearTextBtn">Clear Text</button>
+        </div>
+      </div>
+      <textarea id="input" placeholder="Enter your text here..."></textarea>
+    </div>
+
+    <div class="box">
+      <div class="box-header">
+        <h3>Output</h3>
+        <div>
+          <span id="copiedIndicator">Copied!</span>
+          <button id="copyBtn">Copy</button>
+          <button id="downloadBtn">Download</button>
+        </div>
+      </div>
+      <textarea id="output" placeholder="Processed output..." readonly></textarea>
+    </div>
+  </div>
+
+  <!--  =============================================  -->  
+  <!--  ====== Div toolbar container start here =====  -->  
+  <!--  ---------------------------------------------  -->
+  <!--  =============================================  -->  
+
+
+ 
+  <!--  Calling For Javascript  -->
+  <script src="script.js"></script>
+
+</body>
+</html>

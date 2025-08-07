@@ -1,0 +1,719 @@
+
+
+
+/*
+This file is part of [SplitTexter] https://github.com/AmanLakhuja/SplitTexter .
+
+Copyright (C) [Aman Lakhuja] [2025]
+
+This program is licensed under the Server Side Public License, version 1,
+as published by MongoDB, Inc.
+
+You may obtain a copy of the SSPL at
+https://www.mongodb.com/licensing/server-side-public-license
+*/
+
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* ------------------------------------------------------------ */
+/* =============== Main toolbar container ======================*/
+/* ------------------------------------------------------------ */
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* =================+ project_name_container +=================  */
+/* ------------------------------------------------------------ */
+
+
+.project_name_container {
+  display: flex;
+  flex-direction: column;
+  margin: 3px 15px;
+  width: 150px;
+  gap: 10px;
+}
+
+
+.projectName{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border: 2px dotted rgb(96 139 168); */
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  text-shadow: 0 0 5px rgba(33, 150, 243, 0.7), 0 0 10px rgba(33, 150, 243, 0.7), 0 0 15px rgb(6 27 44 / 70%);
+  margin: 4px 2px;
+}
+
+
+/* ---- Tooltip for CreatedBy Class ----*/
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 120%; /* Position above button */
+  left: 90%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Tooltip arrow for below */
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* Arrow appears above the tooltip */
+  left: 30%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+
+.CreatedBy #my_name:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.CreatedBy #my_name {
+  position: relative; /* Using Position relative because its Important for tooltip positioning */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  padding: 4px 8px;
+  background-color: #a04406;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 2px 5px;
+  border: dotted 2px;
+  border-color: #ff6905;
+  box-shadow: 0 0px 50px -10px  rgba(101, 255, 250, 0.678);
+  will-change: transform, box-shadow;
+}
+
+.CreatedBy #my_name:hover {
+  border-color: #00a3fb;
+  background-color: #65b524;
+  box-shadow: 0 0px 50px -3px  rgba(101, 255, 250, 0.678);
+  /*transform: translate(2px, 2px);
+  transition: transform 0.3s ease;*/
+  transition: box-shadow 0.3s ease;
+}
+
+
+.CreatedBy #my_name:active {
+  transform: translateY(2px); /* Moves the button down slightly */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); /* Reduces shadow for a "pressed" look */
+  transition: transform 0.3s ease;
+}
+
+/* ------------------------------------------------------------ */
+/* ==================+ Separater_container +==================  */
+/* ------------------------------------------------------------ */
+
+
+.Separater_container {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px; 
+  border: 2px dotted rgb(16, 129, 205);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2px 10px; 
+}
+
+.form-row {
+  display: flex;
+  align-items: baseline; 
+  gap: 10px;
+}
+
+.form-row label {
+    flex-shrink: 0; /* Prevent label from shrinking */
+    text-align: right; 
+}
+
+.form-row input {
+    flex-grow: 1; /* Allow input to take up available space */
+    flex-basis: 0; /* Ensures that inputs are evenly distributed */
+    min-width: 0; /* Prevents inputs from being too wide if content is larger than expected */
+
+}
+
+/* ------------------------------------------------------------ */
+/* ==================+ Checkbox_container +==================  */
+/* ---------------------------------------------------------- */
+
+.Checkbox_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  border: 2px dotted rgb(16, 129, 205);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2px 10px;
+}
+
+
+.checkbox-row{
+  flex-shrink: 0;
+  background-color: #0995b8;
+  border-radius: 5px;
+  padding: 3px 1px;
+  min-width: 90px;
+  width: 145px
+}
+
+
+/* ------------------------------------------------------------ */
+/* ================+ prefix_sufix_container +================  */
+/* ---------------------------------------------------------- */
+
+.prefix_sufix_container{
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  border: 2px dotted rgb(16, 129, 205);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2px 10px;
+}
+
+/* ------------------------------------------------------------ */
+/* ================+ ClearButtonContainer +================  */
+/* ---------------------------------------------------------- */
+
+.ClearButtonContainer {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px; 
+  border: 2px dotted rgb(16, 129, 205);
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 2px 10px;
+}
+
+.clr-button-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.toolbar input[type="text"] {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  outline: none;
+  min-width: 120px;
+}
+
+.toolbar input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #2f4f4f;
+  /*margin: 2px 2px 2px 6px;
+  outline: 1px solid #000000; */
+}
+
+
+.toolbar #clearInputsBtn {
+  background-color: #cd6d19;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-color: #602600;
+  cursor: pointer;
+  transition: all 0.2s ease; 
+}
+
+.toolbar #clearInputsBtn:hover {
+  border-color: #cd7426d4;
+  background-color: #a04406;
+  box-shadow: 0 0px 50px 1px  rgba(146, 12, 12, 0.825);
+}
+
+.toolbar #clearInputsBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); /* Reduceing shadow for a "pressed" look */
+}
+
+
+.toolbar #clearAllBtn {
+  background-color: #d83c3c;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border-color: #602600;
+  
+}
+.toolbar #clearAllBtn:hover {
+  border-color: #f85d58d4;
+  background-color: #be432d;
+  box-shadow: 0 0px 50px 1px  rgba(146, 12, 12, 0.825);
+
+}
+
+.toolbar #clearAllBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* ----------------------------------------------------------------- */
+/* ======+ Dark Mode Toggle [toogle_button_main_container] +======  */
+/* --------------------------------------------------------------- */
+
+/* Toggle Button Styles */
+
+.toogle_button_main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px dotted rgb(16, 129, 205);
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin: 2px 10px;
+  width: 50px;
+}
+
+/* Hide the default checkbox */
+.theme-toggle-input {
+  display: none;
+}
+
+/* To Style the toggle switch container */
+.theme-toggle-label {
+  display: block;
+  position: relative;
+  width: 34px; /* Swapped width and height for vertical orientation */
+  height: 70px;
+  background-color:#aeb3b8 ;
+  border-radius: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Style the slider (the moving circle) */
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icons inside the slider */
+.icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+/* Show sun icon by default */
+.sun-icon {
+  opacity: 1;
+  fill: goldenrod;
+}
+
+/* Hide moon icon by default */
+.moon-icon {
+  opacity: 0;
+  fill: black;
+}
+
+/* Checkbox checked (dark mode): move slider and switch icons */
+.theme-toggle-input:checked + .theme-toggle-label .toggle-slider {
+  transform: translateY(36px);
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .sun-icon {
+  opacity: 0;
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .moon-icon {
+  opacity: 1;
+}
+
+
+/* 
+Use body.dark-mode selector_class/id {} for adding dark mode theme
+*/
+
+/* ------ ++ Toolbar Container Elements Ends Here ++ -----  */
+
+/* ---------------------------------------------------------*/
+/* ====== Start of Main Textbox Conatiner [container] =====*/
+/* -------------------------------------------------------*/
+
+
+.container {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: F4F7F7;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecf0f1;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+.box-header h3 {
+  margin: 0;
+  font-size: 16px;
+  margin: 2px 4px;
+}
+
+.box-header #pasteBtn {
+  background-color: #3498db;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-color: #2980b9;
+  margin: 2px 10px;
+}
+
+.box-header #pasteBtn:hover {
+  border-color: #00a3fb;
+  background-color: #2980b9;
+  box-shadow: 0 0px 50px 1px  rgba(101, 178, 255, 0.678);
+}
+
+.box-header #pasteBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); 
+}
+
+
+.box-header #clearTextBtn {
+  background-color: #3498db;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-color: #2980b9;
+  margin: 2px 2px;
+}
+
+.box-header #clearTextBtn:hover {
+  border-color: #00a3fb;
+  background-color: #2980b9;
+  box-shadow: 0 0px 50px 1px  rgba(101, 178, 255, 0.678);
+}
+
+.box-header #clearTextBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); 
+}
+
+
+.box-header #copyBtn {
+  background-color: #3498db;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-color: #2980b9;
+  margin: 2px 2px;
+}
+
+.box-header #copyBtn:hover {
+  border-color: #00a3fb;
+  background-color: #2980b9;
+  box-shadow: 0 0px 50px 1px  rgba(101, 178, 255, 0.678);
+}
+
+.box-header #copyBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); 
+}
+
+.box-header #downloadBtn {
+  background-color: #3498db;
+  color: white;
+  border: solid 2px;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-color: #2980b9;
+  margin: 2px 2px;
+}
+
+.box-header #downloadBtn:hover {
+  border-color: #00a3fb;
+  background-color: #2980b9;
+  box-shadow: 0 0px 50px 1px  rgba(101, 178, 255, 0.678);
+}
+
+.box-header #downloadBtn:active {
+  transform: translateY(2px); 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15); 
+}
+
+
+
+textarea {
+  flex: 1;
+  resize: none;
+  font-size: 14px;
+  padding: 15px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+  overflow: auto;
+  min-height: 200px;
+}
+
+
+
+#copiedIndicator {
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+  display: none;
+  margin: 2px 2px;
+}
+
+/* -------------------------------------------------*/
+/* =================== Dark Mode ==================*/
+/* -----------------------------------------------*/
+/* Custom dark mode overrides for containers */
+
+body.dark-mode .theme-toggle-label {
+  background-color:darkslategrey ;
+}
+
+body.dark-mode {
+  background-color: #2c2f33;
+  color: #d1d5db;
+}
+
+body.dark-mode .toolbar {
+  background-color: #1f2327;
+  /*color: #aeb3b8; */
+  border-color: #3a3f47;
+}
+
+body.dark-mode .box {
+  background-color: #23272a;
+  color: #d1d5db;
+  border-color: #3a3f47;
+}
+
+body.dark-mode .box-header {
+  background-color: #1f2327;
+  color: #aeb3b8;
+  border-bottom-color: #3a3f47;
+}
+
+body.dark-mode button,
+body.dark-mode #clearInputsBtn,
+body.dark-mode #clearAllBtn,
+body.dark-mode #pasteBtn,
+body.dark-mode #clearTextBtn,
+body.dark-mode #copyBtn,
+body.dark-mode #downloadBtn {
+  background-color: #3a4552;
+  color: #d1d5db;
+  border-color: #556074;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode button:hover,
+body.dark-mode #clearInputsBtn:hover,
+body.dark-mode #clearAllBtn:hover,
+body.dark-mode #pasteBtn:hover,
+body.dark-mode #clearTextBtn:hover, 
+body.dark-mode #copyBtn:hover,
+body.dark-mode #downloadBtn:hover {
+  background-color: #556074;
+  border-color: #4a90e2; 
+  box-shadow: 0 0 8px #4a90e2;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode textarea {
+  background-color: #23272a;
+  color: #e0e0e0;
+  border: 1px solid #3a3f47;
+}
+
+body.dark-mode .projectName {
+  color: #d87f2a; 
+  /*text-shadow: 0 0 10px rgba(216, 127, 42, 0.7);  */
+  text-shadow: none;
+}
+
+body.dark-mode .tooltip-text {
+  background-color: darkslategrey;
+  border: solid 1px;
+  border-color:rgb(66, 62, 62);
+  height: 16px;
+  top: 110%;
+}
+
+/* --------------------------------------------------------- */
+/* ======Better Font Rendering for Older Devices ===========*/
+/* ------------------------------------------------------- */
+
+
+html, body, * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.toolbar, label, button, .checkbox-row, .projectName {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern";
+}
+
+
+/* -------------------------------------------------*/
+/* ================ All Media Rules ===============*/
+/* -----------------------------------------------*/
+
+
+@media screen and (max-width: 550px) {
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* body { overflow-y: hidden;}  [This hides the scorllbar but also disables it] */
+
+  .toolbar{
+    gap:6px
+  }
+
+  .CreatedBy #my_name {
+    box-shadow:none;
+  }
+  .CreatedBy #my_name:hover {
+    box-shadow: none;
+    transition: none;
+  }
+
+
+  .Checkbox_container {
+    /*flex-grow: 1; */
+    align-items: center;
+    width: 120px;
+    padding: 10px;
+  }
+  .checkbox-row{
+    width: 100% !important;
+  }
+  .project_name_container{
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  .prefix_sufix_container{ 
+    flex-grow: 1;
+    align-items: center;
+  }
+  .container {
+  flex-direction: column;
+  }
+  textarea {
+    min-height: 200px;
+    max-height: 300px;
+  }
+}
