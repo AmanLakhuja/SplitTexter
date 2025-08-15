@@ -1,13 +1,13 @@
 
-# SplitTexter
+# SplitTexter  ![Icon](./assets/icons/SplitTexter_64x64_icon.png)
 
 This project is a simple web application that processes text based on user-defined rules. It's built with vanilla HTML, CSS, and JavaScript, requiring no external libraries or frameworks. It allows for user to separate text based on there specified criteria and add prefix and suffix to each Separation Point.
 
 ---
 ## Screenshots 📸
-![Light_Mode_screenshot](./images/SplitTexter_light.png)
+![Light_Mode_screenshot](./assets/images/SplitTexter_light.png)
 
-![Dark_Mode_screenshot](./images/SplitTexter_dark.png)
+![Dark_Mode_screenshot](./assets/images/SplitTexter_dark.png)
 
 ---
 
